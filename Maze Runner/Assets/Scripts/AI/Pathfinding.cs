@@ -22,7 +22,7 @@ namespace Pathfinding
         private void FixedUpdate() 
         {
             FindPlayer();
-            speed = Vector3.Project(nav.desiredVelocity, transform.forward).magnitude;
+            //speed = nav.speed;
             if(nav.remainingDistance > 50f)
                 Idle();
 
@@ -41,13 +41,13 @@ namespace Pathfinding
 
         private void Sprint()
         {
-            anim.Play("mutant run", 0, speed);
+            anim.Play("mutant run");
             nav.speed = 16f;
         }
 
         private void Walk()
         {
-            anim.Play("mutant walk", 0, speed);
+            anim.Play("mutant walk");
             nav.speed = 2f;
         
         }
